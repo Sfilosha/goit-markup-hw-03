@@ -16,6 +16,12 @@
     --cl-hero-background: rgb(46 47 66 / 0.7 );
     --cl-white: #FFFFFF;
     --cl-modal-bg: #FCFCFC;
+
+    /* Grids */
+    --grid-4-items: 4;
+    --grid-3-items: 3;
+    --indent-row: 48px;
+    --indent-col: 24px;
  }
 
  /* #endregion Root */
@@ -28,6 +34,13 @@
        background-color: var(--cl-white);
        letter-spacing: 0.02em;
        line-height: 1.5;
+
+       display: block;
+   }
+
+   h1, h2, h3, h4, h5, h6, p, ul, il, a {
+      margin: 0;
+      padding: 0;
    }
 
    h1 {
@@ -65,6 +78,7 @@
     font-family: inherit;
     color: currentColor;
     background-color: inherit;
+    border: 0;
    }
 
    address {
@@ -72,6 +86,8 @@
    }
 
    img {
+      display: block;
+      max-width: 100%;
    }
 
     .logo {
@@ -86,22 +102,47 @@
     
     .logo.dark {
         color: var(--cl-dark);
+        margin-right: 48px;
     }
 
     .logo.light {
         color: var(--cl-light);
     }
+
+   .container {
+      max-width: 1158px;
+      padding: 120px 15px;
+      margin-left: auto;
+      margin-right: auto;
+   }
  /* #endregion Base */
 
  /* #region Navigation */
 
- .header {}
+ .header {
+   display: flex;
+   flex-basis: 100%;
+   justify-content: space-between;
+   align-items: center;
 
- .nav {}
+   padding-top: 0px;
+   padding-bottom: 0px;
+ }
 
- .nav-list {}
+ .nav {
+   display: flex;
+   align-items: center;
+ }
+
+ .nav-list {
+   display: flex;
+   gap: 40px;
+   
+ }
 
  .nav-list-item {
+   display: block;
+   padding: 24px 0;
  }
 
  .nav-link {
@@ -117,9 +158,14 @@
 
  .address {}
 
- .address-list {}
+ .address-list {
+   display: flex;
+   gap: 40px;
+ }
 
- .address-list-item {}
+ .address-list-item {
+   padding: 24px 0;
+ }
 
  .address-link {
     color: var(--cl-text);
@@ -133,6 +179,16 @@
     /* #endregion Navigation */
 
 /* #region Hero */
+.container.hero {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   padding-top: 188px;
+   padding-bottom: 188px;
+}
+
  .hero {
     background-color: var(--cl-dark);
  }
@@ -141,6 +197,10 @@
     color: var(--cl-white);
     line-height: 1.07;
     text-align: center;
+
+    max-width: 496px;
+    margin-bottom: 48px;
+
  }
 
  .hero-button {
@@ -150,6 +210,8 @@
     
     background-color: var(--cl-primary-color);
     color: var(--cl-white);
+
+    padding: 16px 32px;
  }
 
  .hero-button:hover,
@@ -161,17 +223,30 @@
  /* #endregion Hero */
 
  /* #region Values */
- .values {}
+ .values {
+   display: flex;
+ }
 
  .values-title {
     
  }
 
- .values-list {}
+ .values-list {
+   display: flex;
+ }
 
- .values-list-item {}
+ .values-list-item {
+   display: flex;
+   flex-direction: column;
+   max-width: 264px;
+ }
+
+ .values-list-item:not(:last-child) {
+   margin-right: 24px;
+ }
 
  .values-subtitle {
+   margin-bottom: 8px;
  }
 
  .values-text {}
@@ -187,19 +262,33 @@
  .team-title {
     text-align: center;
     text-transform: capitalize;
+    margin-bottom: 72px;
  }
 
- .team-list {}
+ .team-list {
+   display: flex;
+ }
 
  .team-list-item {
-    background-color: var(--cl-white);
+    background-color: var(--cl-white);max-width: 264px;
  }
+
+  .team-list-item:not(:last-child) {
+   margin-right: 24px;
+  }
 
  .team-image {}
 
- .team-subtitle {}
+ .team-subtitle {
+   text-align: center;
+   margin-top: 32px;
+   margin-bottom: 8px;
+ }
 
- .team-role {}
+ .team-role {
+   text-align: center;
+   margin-bottom: 32px;
+ }
    
  /* #endregion Team*/
 
@@ -212,25 +301,46 @@
  .portfolio-title {
     text-align: center;
     text-transform: capitalize;
+    margin-bottom: 72px;
  }
 
-.portfolio-cases {}
+.portfolio-cases {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   row-gap: var(--indent-row);
+   column-gap: var(--indent-col);
+}
 
 .portfolio-list-item {
     background-color: var(--cl-white);
+    max-width: 360px;
+    width: calc((100% - (2 * 24px)) / 3);
 }
 
 .portfolio-link {}
 
-.portfolio-image {}
+.portfolio-image {
+   align-items: flex-start;
+}
 
-.portfolio-subtitle {}
+.portfolio-subtitle {
+   margin-top: 32px;
+   margin-bottom: 8px;
+}
 
-.potfolio-descriptor {}
+.potfolio-descriptor {
+   margin-bottom: 8px;
+}
 
  /* #endregion Portfolio */
 
  /* #region Footer */
+
+ .container .footer {
+   padding-top: 100px;
+   padding-bottom: 100px;
+ }
 
  .footer {
     background-color: var(--cl-dark);
@@ -238,6 +348,8 @@
 
  .text-footer {
     color: var(--cl-light);
+    max-width: 264px;
+    margin-top: 16px;
  }
  /* #endregion Footer*/
 
