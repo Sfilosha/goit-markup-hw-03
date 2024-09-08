@@ -66,6 +66,7 @@
    a {
     text-decoration: none;
     color: currentColor;
+    display: inline-block;
    }
 
    ul,
@@ -102,7 +103,7 @@
     
     .logo.dark {
         color: var(--cl-dark);
-        margin-right: 48px;
+        margin-right: 76px;
     }
 
     .logo.light {
@@ -119,6 +120,19 @@
    section {
       padding-top: 120px;
       padding-bottom: 120px;
+   }
+
+   .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      white-space: nowrap;
+      clip-path: inset(100%);
+      clip: rect(0 0 0 0);
+      overflow: hidden;
    }
  /* #endregion Base */
 
@@ -147,18 +161,16 @@
  .nav-list {
    display: flex;
    gap: 40px;
-   
  }
 
  .nav-list-item {
-   display: block;
-   padding: 24px 0;
  }
 
  .nav-link {
         font-weight: 500;
         letter-spacing: 0.02em;
         color: var(--cl-dark);
+        padding: 24px 0;
  }
 
  .nav-link:hover,
@@ -223,6 +235,8 @@
     
     padding: 16px 32px;
     margin: 0 auto;
+    min-width: 169px;
+   border-radius: 4px;
     
  }
 
@@ -283,6 +297,7 @@
 
  .team-list-item {
     background-color: var(--cl-white);max-width: 264px;
+    border-radius: 0px 0px 4px 4px;
  }
 
   .team-list-item:not(:last-child) {
@@ -291,15 +306,17 @@
 
  .team-image {}
 
+ .team-text {
+   padding: 32px 0;
+ }
+
  .team-subtitle {
    text-align: center;
-   margin-top: 32px;
    margin-bottom: 8px;
  }
 
  .team-role {
    text-align: center;
-   margin-bottom: 32px;
  }
    
  /* #endregion Team*/
@@ -328,21 +345,25 @@
     background-color: var(--cl-white);
     max-width: 360px;
     width: calc((100% - (2 * 24px)) / 3);
+
+   border: 1px solid #e7e9fc;
+   border-top: none;
+}
+
+.case-card-text {
+   padding: 32px 16px;
 }
 
 .portfolio-link {}
 
 .portfolio-image {
-   align-items: flex-start;
 }
 
 .portfolio-subtitle {
-   margin-top: 32px;
    margin-bottom: 8px;
 }
 
 .potfolio-descriptor {
-   margin-bottom: 8px;
 }
 
  /* #endregion Portfolio */
@@ -355,10 +376,13 @@
    padding-bottom: 100px;
  }
 
+ footer > div > a {
+   margin-bottom: 16px;
+ }
+
  .text-footer {
     color: var(--cl-light);
     max-width: 264px;
-    margin-top: 16px;
  }
  /* #endregion Footer*/
 
