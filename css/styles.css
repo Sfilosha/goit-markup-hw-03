@@ -124,6 +124,11 @@
 
  /* #region Navigation */
 
+ header {
+   background-color: var(--cl-white);
+   border-bottom: 1px solid var(--cl-accent);
+ }
+
  .header {
    display: flex;
    flex-basis: 100%;
@@ -132,9 +137,6 @@
 
    padding-top: 0px;
    padding-bottom: 0px;
-
-   background-color: var(--cl-white);
-   border-bottom: 1px solid var(--cl-accent);
  }
 
  .nav {
