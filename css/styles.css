@@ -111,9 +111,14 @@
 
    .container {
       max-width: 1158px;
-      padding: 120px 15px;
+      padding: 0 15px;
       margin-left: auto;
       margin-right: auto;
+   }
+
+   section {
+      padding-top: 120px;
+      padding-bottom: 120px;
    }
  /* #endregion Base */
 
@@ -127,6 +132,9 @@
 
    padding-top: 0px;
    padding-bottom: 0px;
+
+   background-color: var(--cl-white);
+   border-bottom: 1px solid var(--cl-accent);
  }
 
  .nav {
@@ -179,18 +187,18 @@
     /* #endregion Navigation */
 
 /* #region Hero */
-.container.hero {
+ 
+.hero {
+   background-color: var(--cl-dark);
+   padding-top: 188px;
+   padding-bottom: 188px;
+ }
+
+ .hero-section {
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-
-   padding-top: 188px;
-   padding-bottom: 188px;
-}
-
- .hero {
-    background-color: var(--cl-dark);
  }
 
  .hero-title {
@@ -210,8 +218,10 @@
     
     background-color: var(--cl-primary-color);
     color: var(--cl-white);
-
+    
     padding: 16px 32px;
+    margin: 0 auto;
+    
  }
 
  .hero-button:hover,
@@ -337,13 +347,10 @@
 
  /* #region Footer */
 
- .container .footer {
-   padding-top: 100px;
-   padding-bottom: 100px;
- }
-
  .footer {
     background-color: var(--cl-dark);
+    padding-top: 100px;
+   padding-bottom: 100px;
  }
 
  .text-footer {
